@@ -1,11 +1,19 @@
 const express = require('express');
 const app=express();
-const dotEnv=require('dotenv')
+const dotenv=require('dotenv')
 const mongoose=require ('mongoose')
 
-dotEnv.config()
+dotenv.config(); // to access mongo url
 
-mongoose.connect('mongodb://localhost:27017/test', {useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect(process.env.MONGO_URL, {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+        useCreateIndex:true
+}).then(
+    console.log('Connected to MongoDB')
+).catch(err=>{
+    console.log(err)
+})
 
 app.use('/',(req,res)=>{
     console.log('Hey')
