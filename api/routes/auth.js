@@ -30,7 +30,7 @@ router.post('/login',async(req,res)=>{
       !user&& res.status(400).json('User not found!')
 
       const validated = await bcrypt.compare(req.body.password,user.password)
-      !validated&& res.status(400).json('Wrong password')
+      !validated&& res.status(400).json('Wrong password!')
 
       const{password,...others}=user._doc;
       res.status(200).json(others)
