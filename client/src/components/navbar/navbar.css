@@ -22,6 +22,10 @@
     flex:6
 }
 
+.topleft{
+    cursor: pointer;
+}
+
 .navlist{
     display: flex;
     justify-content:center;
