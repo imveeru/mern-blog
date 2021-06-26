@@ -1,11 +1,12 @@
 .navbar{
     width: 100%;
-    height:50px;
+    height:auto;
     background-color: #f8f8f8;
     position:sticky;
     top:0;
-    padding:5px 0;
+    padding:15px 0;
     display:flex;
+    flex-wrap: wrap;
     align-items: center;
     font-family: Poppins;
     z-index:9999;
