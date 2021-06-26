@@ -1,13 +1,16 @@
 import React from 'react'
 import './home.css'
 import Header from '../../components/header/Header'
+import Posts from '../../components/posts/Posts'
 
 function Home() {
     return (
-        <div className='home'>
+        <>
             <Header/>
-            Home
-        </div>
+            <div className='home'>
+                <Posts/>
+            </div>
+        </>
     )
 }
 

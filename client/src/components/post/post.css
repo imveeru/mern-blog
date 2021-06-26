@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+
+.post{
+    width:375px;
+    margin: 0 25px 40px 25px;
+}
+
+.postImg{
+    width:100%;
+    height:200px;
+    object-fit: cover;
+    border-radius:7px;
+    margin-bottom: 10px;
+}
+
+.postInfo{
+    font-family: 'Poppins';
+    display:flex;
+    flex-direction: column;
+}
+
+.postCat{
+    font-size:14px;
+    color: #0070f3;
+    margin-top: 10px;
+    margin-right: 10px;
+    cursor:pointer;
+    padding:5px 10px;
+    border-radius:10px;
+    background-color:#e2efff;
+}
+
+.postTitle{
+     font-family: 'Oswald';
+     font-size: 2em;
+     cursor: pointer;
+     margin-top: 10px;
+}
+
+.postDate{
+    font-size: 14px;
+    color: #999;
+    margin-top:10px;
+}
+
+hr{
+    opacity: .25;
+}
+
+.postDesc{
+    font-size: 14px;
+    color: #444;
+    line-height:24px;
+    margin-top: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display:-webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+}
