@@ -14,6 +14,7 @@ import {
 } from 'react-router-dom'
 
 function App() {
+  const userLoggedIn =false;
   return (
     <Router>
       <div className="App">
@@ -23,18 +24,18 @@ function App() {
                 <Home/>
               </Route>
               <Route path='/register'>
-                <Register/>
+                {userLoggedIn?<Home/>:<Register/>}
               </Route>
               <Route path='/login'>
-                <Login/>
+                {userLoggedIn?<Home/>:<Login/>}
               </Route>
               <Route path='/write'>
-                <Write/>
+                {userLoggedIn?<Write/>:<Register/>}
               </Route>
               <Route path='/settings'>
-                <Settings/>
+                {userLoggedIn?<Settings/>:<Register/>}
               </Route>
-              <Route path='/single'>
+              <Route path='/post/:postid'>
                 <Single/>
               </Route>
           </Switch>

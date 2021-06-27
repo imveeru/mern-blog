@@ -2,6 +2,7 @@ import React from 'react'
 import './login.css'
 import {FaKey} from 'react-icons/fa'
 import {HiMail} from 'react-icons/hi'
+import {Link} from 'react-router-dom'
 
 function Login() {
     return (
@@ -19,7 +20,7 @@ function Login() {
                 <input type='password' placeholder='*******'></input>
                 <div className='btnsWrapper'>
                     <button type='submit' className='loginButton'>Login</button>
-                    <span className='loginRegisterButton'>New User? Click Here!</span>
+                    <span className='loginRegisterButton'><Link to='/register' style={{textDecoration: 'none',color:'inherit'}}>New User? Click Here!</Link></span>
                 </div>
             </form>
             </div>
