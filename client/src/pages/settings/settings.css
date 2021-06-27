@@ -1,0 +1,79 @@
+.settingsWrapper{
+    padding:3% 10% ;
+    font-family: 'Poppins';
+}
+
+.settingsTitle{
+    display:flex;
+    align-items: center;
+    justify-content:space-between;
+}
+
+.settingsUpdateTitle{
+    font-size: 30px;
+    font-weight: 800;
+    margin-bottom:20px;
+    color:#0070f3;
+}
+
+.settingsDeleteTitle{
+    color:red;
+    font-size:12px;
+    cursor :pointer;
+    background-color:rgba(255, 213, 213, 0.1);
+    padding:8px;
+    border-radius: 10px;
+}
+
+.settingsForm{
+    display:flex;
+    flex-direction: column;
+}
+
+.settingsPP{
+    display:flex;
+    align-items:center;
+    margin: 10px 0;
+}
+
+.settingsPP>img{
+    width: 100px;
+    height: 100px;
+    border-radius:20px;
+    object-fit: cover;
+}
+
+.settingsPPIcon{
+    width:30px;
+    height:30px;
+    color:gray;
+    margin-left:15px;
+    cursor: pointer;
+}
+
+.settingsForm>label{
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+.settingsForm>input{
+    color:gray;
+    margin: 10px 0;
+    border:1px solid lightgray;
+    border-radius: 10px;
+    padding:15px;
+}
+
+.settingsSubmit{
+    font-family: 'Poppins';
+    font-weight: 600;
+    margin-top:30px;
+    width:150px;
+    padding:  10px 25px ;
+    border-radius: 15px;
+    background-color: #0070f3;
+    box-shadow: 0 4px 14px 0 rgba(0, 119, 255, 0.37);
+    color: white;
+    border:none;
+    cursor: pointer;
+}
