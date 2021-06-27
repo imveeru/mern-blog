@@ -25,8 +25,8 @@ function NavBar() {
             <div className='topright'>
                 <img 
                     className='userimg'
-                    src='https://lh3.googleusercontent.com/proxy/wHPHiR8ZQIMWy7F30YY8K94PhnFf8zuf-rRFixhpGQGk1jZ9WW2PAznwkflBvaj0Q8WZ-tToV3YlIoehj0eUdb4j6jkp4zggsQ'
-                    alt='profile'
+                    src='https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80'
+                    alt='profileImg'
                 />
                 <ImSearch className='searchicon' size='1.3em'/>
             </div>
