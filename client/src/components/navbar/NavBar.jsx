@@ -9,11 +9,14 @@ function NavBar() {
 
     return (
         <div className='navbar'>
-
+            
             <div className='topleft'>
-                <ImPen size='1.3em'/>
-                <span className='blogtitle'>Write.</span>
+                <Link to='/' style={{textDecoration: 'none',color:'inherit'}}>
+                    <ImPen size='1.3em'/>
+                    <span className='blogtitle'>Write.</span>
+                </Link>
             </div>
+            
 
             <div className='topcenter'>
                 <ul className="navlist">
