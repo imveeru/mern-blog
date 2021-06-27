@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap');
+
+.registerHeader{
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+    margin:40px 0;
+}
+
+.headerTitle{
+    font-size:7em;
+    font-family: 'Abril Fatface';
+}
+
+.headerSubtitle{
+    font-size: 1.5em;
+    color: rgba(0, 0, 0, 0.75);
+}
+
+.register{
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+    font-family: 'Poppins';
+}
+
+.registerForm{
+    display: flex;
+    flex-direction: column;
+    width:35vw;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.registerFormWrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color:#f8f8f867;
+    width:50vw;
+    padding:25px;
+    border-radius: 15px;
+}
+
+.registerTitle{
+    font-size: 36px;
+    font-weight: 800;
+}
+
+.registerButton{
+    font-family: 'Poppins';
+    font-weight: 600;
+    width:100px;
+    margin-top: 20px;
+    padding:  10px 25px ;
+    border-radius: 15px;
+    background-color: #0070f3;
+    box-shadow: 0 4px 14px 0 rgba(0, 119, 255, 0.37);
+    color: white;
+    border:none;
+    cursor: pointer;
+}
+
+.registerForm>label{
+    font-size:20px;
+    margin-top: 20px;
+}
+
+.registerForm>input{
+    font-size:18px;
+    padding: 10px;
+    background:none;
+    border: 1px solid gray;
+    margin-top: 10px;
+    border-radius: 10px;
+}
+
+.btnsWrapper{
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+}
+
+.registerLoginButton{
+    margin-top:20px;
+    font-size: 14px;
+    opacity: .75;
+    cursor: pointer;
+}
+
+.registerLoginButton:hover{
+    text-decoration:underline;
+}
+
+.registerIcons{
+    font-size:16px;
+    opacity: .7;
+    padding-top:10px;
+}
