@@ -15,7 +15,7 @@ function Login() {
             <span className='loginTitle'>Login</span>
             <form className='loginForm'>
                 <label><HiMail className='loginIcons'/> eMail</label>
-                <input type='email' placeholder='aaa@aaa.com'></input>
+                <input type='email' placeholder='aaa@aaa.com' autoFocus></input>
                 <label><FaKey className='loginIcons'/> Password</label>
                 <input type='password' placeholder='*******'></input>
                 <div className='btnsWrapper'>

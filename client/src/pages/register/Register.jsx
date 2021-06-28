@@ -43,7 +43,7 @@ function Register() {
             <span className='registerTitle'>Register</span>
             <form className='registerForm' onSubmit={handleSubmit}>
                 <label><FaUserAlt className='registerIcons'/> Username</label>
-                <input type='text' placeholder='John Doe' onChange={e=>setUsername(e.target.value)}></input>
+                <input type='text' placeholder='John Doe' autoFocus onChange={e=>setUsername(e.target.value)}></input>
                 <label><HiMail className='registerIcons'/> eMail</label>
                 <input type='email' placeholder='aaa@aaa.com' onChange={e=>setEmail(e.target.value)}></input>
                 <label><FaKey className='registerIcons'/> Password</label>
