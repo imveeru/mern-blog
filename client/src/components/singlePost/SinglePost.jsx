@@ -4,6 +4,9 @@ import {GrEdit} from 'react-icons/gr'
 import {RiDeleteBin6Line} from 'react-icons/ri'
 
 function SinglePost() {
+
+    
+
     return (
         <div className="singlePost">
             <div className='singlePostWrapper'>

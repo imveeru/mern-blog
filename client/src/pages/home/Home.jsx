@@ -10,15 +10,19 @@ function Home() {
 
     useEffect(()=>{
         const fetchPosts=async ()=>{
-            axios.get("")
+            const res = await axios.get("/posts")
+            setPosts(res.data)
         }
+        fetchPosts()
     },[])
+
+    console.log(posts)
 
     return (
         <>
             <Header/>
             <div className='home'>
-                <Posts/>
+                <Posts key={posts._id} posts={posts}/>
             </div>
         </>
     )
