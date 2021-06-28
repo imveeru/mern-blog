@@ -4,6 +4,7 @@ import {FaKey,FaUserAlt} from 'react-icons/fa'
 import {HiMail} from 'react-icons/hi'
 import {Link} from 'react-router-dom'
 import axios from 'axios'
+import toast, { Toaster } from 'react-hot-toast';
 
 function Register() {
 
@@ -14,22 +15,26 @@ function Register() {
 
     const handleSubmit=async (e) =>{
         e.preventDefault();
-        console.log(username,email,password)
+        //console.log(username,email,password)
+        setError(false)
         try{
             const res = await axios.post("/auth/register",{
                 username,
                 email,
                 password,
             });
-            console.log(res)
-            res.data&&window.location.replace('/login')
+            //console.log(res)
+            res.data&&window.location.replace('/login');
+            toast.success('Successfully Registered!')
         }catch(err){
             setError(true)
+            error&&toast.error('Username or eMail already in use!')
         }
     }
 
     return (
         <div className="register">
+            <div><Toaster/></div>
             <div className='registerHeader'>
                 <span className='headerTitle'>Write.</span>
                 <span className='headerSubtitle'>Share your notion.</span>
