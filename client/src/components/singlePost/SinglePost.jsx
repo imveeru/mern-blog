@@ -4,6 +4,7 @@ import './singlePost.css'
 import {GrEdit} from 'react-icons/gr'
 import {RiDeleteBin6Line} from 'react-icons/ri'
 import axios from 'axios'
+import {Link} from 'react-router-dom'
 
 function SinglePost() {
 
@@ -39,7 +40,7 @@ function SinglePost() {
                     </div>
                 </h1>
                 <div className='singlePostInfo'>
-                    <span className='singlePostAuthor'>Author : <b>{post.username}</b></span>
+                    <span className='singlePostAuthor'>Author : <Link to={`/?user=${post.username}`} style={{textDecoration: 'none',color: 'inherit'}}><b>{post.username}</b></Link></span>
                     <span className='singlePostDate'>{new Date(post.createdAt).toDateString()}</span>
                 </div>
                 <p className='singlePostDesc'>
