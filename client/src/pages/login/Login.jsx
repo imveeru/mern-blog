@@ -9,7 +9,7 @@ function Login() {
 
     const userRef=useRef();
     const passwordRef=useRef();
-    const {user,dispatch,isFetching}=useContext(Context)
+    const {user,dispatch}=useContext(Context)
 
     const handleSubmit=async (e)=>{
         e.preventDefault();

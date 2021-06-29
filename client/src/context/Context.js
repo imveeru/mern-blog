@@ -1,8 +1,8 @@
-import {createContext,useReducer} from 'react'
+import {createContext,useReducer,useEffect} from 'react'
 import Reducer from './Reducer'
 
 const INITIAL_STATE={
-    user:null,
+    user:JSON.parse(localStorage.getItem('writeBlogUser')) || null ,
     isFetching:false,
     error:false
 }
@@ -13,7 +13,12 @@ export const ContextProvider=({children})=>{
 
     const [state,dispatch]=useReducer(Reducer,INITIAL_STATE)
 
-    return <Context.Provider
+    useEffect(() => {
+        localStorage.setItem('writeBlogUser',JSON.stringify(state.user))
+
+    },[state.user])
+
+    return (<Context.Provider
     value={{
         user:state.user,
         isFetching:state.isFetching,
@@ -22,6 +27,6 @@ export const ContextProvider=({children})=>{
     }}
     >
     {children}    
-    </Context.Provider>
-    
+    </Context.Provider>)
+
 }
