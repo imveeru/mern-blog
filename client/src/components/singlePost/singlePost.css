@@ -1,5 +1,7 @@
 .singlePostWrapper{
     padding:30px;
+    display:flex;
+    flex-direction: column;
 }
 
 .singlePostImg{
@@ -58,4 +60,46 @@
     margin-left: 25px;
     font-size: 30px;
     font-weight: 800px;
+}
+
+/* update mode styles */
+
+.singlePostTitleInput{
+    margin:10px 0;
+    font-family: Oswald;
+    font-size: 2.6em;
+    text-align: center;
+    outline: none;
+    color:gray;
+    border: 1px solid gray;
+    border-radius: 10px;
+}
+
+.singlePostTitleInput:focus{
+    outline: none;
+}
+
+.singlePostDescInput{
+    font-size:18px;
+    font-family: 'Poppins';
+    line-height:32px;
+    outline: none;
+    color:gray;
+    border: 1px solid gray;
+    border-radius: 10px;
+}
+
+.singlePostBtn{
+    align-self: flex-end;
+    font-family: 'Poppins';
+    font-weight: 600;
+    width:120px;
+    margin-top:30px;
+    padding:  10px 25px ;
+    border-radius: 15px;
+    background-color: #0070f3;
+    box-shadow: 0 4px 14px 0 rgba(0, 119, 255, 0.37);
+    color: white;
+    border:none;
+    cursor: pointer;
 }
