@@ -51,7 +51,7 @@ function NavBar() {
             <div className='topright'>
                     {user?
                         (
-                            <Link to='/user/' style={{textDecoration: 'none',color:'inherit'}}>
+                            <Link to='/settings' style={{textDecoration: 'none',color:'inherit'}}>
                                 <img 
                                     className='userimg'
                                     src={user.profilePic}
