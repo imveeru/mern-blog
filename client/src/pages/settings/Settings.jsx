@@ -11,6 +11,7 @@ function Settings() {
     const[username,setUsername]=useState('')
     const[email,setEmail]=useState('')
     const[password,setPassword]=useState('')
+    const[success,setSuccess]=useState(false)
     
     const {user} = useContext(Context)
 
@@ -41,12 +42,14 @@ function Settings() {
 
         try{
             await axios.put('/users/'+user._id,updatedUser)
-            console.log(updatedUser);
-            console.log(user._id)
-            toast.success('Updated Successfully!',{duration:3000})
+            setSuccess(true)
+            // console.log(updatedUser);
+            // console.log(user._id)
+            success&&toast.success('Updated Successfully!',{duration:3000})
             // window.location.replace('/post/'+res.data._id)
         }catch(err){
-
+            setSuccess(false)
+            toast.error('An error occurred!',{duration:3000})
         }
     }
 
