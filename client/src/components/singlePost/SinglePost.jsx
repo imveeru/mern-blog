@@ -8,6 +8,8 @@ import {Link} from 'react-router-dom'
 
 function SinglePost() {
 
+    const PF="http://localhost:5000/images/" // images path
+
     const location=useLocation()
     const path=location.pathname.split('/')[2]
     const [post,setPost]=useState([])
@@ -28,7 +30,7 @@ function SinglePost() {
                 {post.photo && (
                     <img
                     className='singlePostImg'
-                    src={post.photo}
+                    src={PF+post.photo}
                     alt='PostImg'
                 />
                 )}
