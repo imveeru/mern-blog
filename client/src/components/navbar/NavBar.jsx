@@ -6,7 +6,11 @@ import {Context} from '../../context/Context'
 
 function NavBar() {
 
-    const {user}=useContext(Context);
+    const {user,dispatch}=useContext(Context);
+
+    const handleLogout=()=>{
+        dispatch({type:"LOGOUT"})
+    }
 
     return (
         <div className='navbar'>
@@ -33,9 +37,14 @@ function NavBar() {
                     <li className='navitem'>
                         <Link to='/write' style={{textDecoration: 'none',color:'inherit'}}>CREATE</Link>
                     </li>
-                    <li className='navitem'>
-                        {user?'LOGOUT':<Link to='/register' style={{textDecoration: 'none',color:'inherit'}}>REGISTER</Link>}
-                    </li>
+                        {user?
+                        (<li className='navitem' onClick={handleLogout}>
+                        LOGOUT
+                        </li>):
+                        (<li className='navitem'> 
+                        <Link to='/register' style={{textDecoration: 'none',color:'inherit'}}>REGISTER</Link>
+                        </li>)
+                        }
                 </ul>
             </div>
 
@@ -44,8 +53,8 @@ function NavBar() {
                     (
                         <img 
                             className='userimg'
-                            src='https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80'
-                            alt='profileImg'
+                            src={user.profilePic}
+                            alt='😎'
                         />
                     ): null
                 }
