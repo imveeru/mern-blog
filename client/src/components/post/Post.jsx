@@ -12,7 +12,7 @@ function Post({post}) {
                 <img
                 className="postImg" 
                 src={PF+post.photo}
-                alt='postImg'
+                alt=''
             />
             )
             }

@@ -1,8 +1,12 @@
-import React from 'react'
+import React,{useContext} from 'react'
 import './settings.css'
 import {BiImageAlt} from 'react-icons/bi'
+import {Context} from '../../context/Context'
 
 function Settings() {
+
+    const {user} = useContext(Context)
+
     return (
         <div className="settings">
             <div className='settingsWrapper'>
@@ -15,7 +19,7 @@ function Settings() {
                     <div className='settingsPP'>
                         <img 
                             className=''
-                            src='https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80'
+                            src={user.profilePic}
                             alt='userProfilePic'
                         />
                         <label htmlFor='fileInput'><BiImageAlt className='settingsPPIcon'/>.</label>

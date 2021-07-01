@@ -52,6 +52,7 @@
     height:40px;
     border-radius: 30%;
     object-fit: cover;
+    cursor: pointer;
 }
 
 .searchicon{

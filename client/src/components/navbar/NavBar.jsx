@@ -49,16 +49,17 @@ function NavBar() {
             </div>
 
             <div className='topright'>
-                {user?
-                    (
-                        <img 
-                            className='userimg'
-                            src={user.profilePic}
-                            alt='😎'
-                        />
-                    ): null
-                }
-                
+                    {user?
+                        (
+                            <Link to='/user/' style={{textDecoration: 'none',color:'inherit'}}>
+                                <img 
+                                    className='userimg'
+                                    src={user.profilePic}
+                                    alt='😎'
+                                />
+                            </Link>
+                        ): null
+                    }
                 <ImSearch className='searchicon' size='1.3em'/>
             </div>
         </div>
