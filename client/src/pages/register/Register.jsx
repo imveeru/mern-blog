@@ -40,7 +40,7 @@ function Register() {
                 <span className='headerSubtitle'>Share your notion.</span>
             </div>
             <div className='registerFormWrapper'>
-            <span className='registerTitle'>Register</span>
+            <span className='registerTitle'>👋 Welcome!</span>
             <form className='registerForm' onSubmit={handleSubmit}>
                 <label><FaUserAlt className='registerIcons'/> Username</label>
                 <input type='text' placeholder='John Doe' autoFocus onChange={e=>setUsername(e.target.value)}></input>

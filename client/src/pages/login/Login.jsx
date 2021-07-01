@@ -38,7 +38,7 @@ function Login() {
                 <span className='headerSubtitle'>Share your notion.</span>
             </div>
             <div className='loginFormWrapper'>
-            <span className='loginTitle'>Login</span>
+            <span className='loginTitle'>👋 Welcome Back!</span>
             <form className='loginForm' onSubmit={handleSubmit}>
                 <label><FaUserAlt className='loginIcons'/> Username</label>
                 <input type='text' placeholder='John Doe' ref={userRef} autoFocus></input>
