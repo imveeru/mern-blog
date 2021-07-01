@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useContext} from 'react';
 import NavBar from './components/navbar/NavBar'
 import Home from './pages/home/Home'
 import Single from './pages/single/Single'
@@ -12,9 +12,11 @@ import {
   Route,
   // Link
 } from 'react-router-dom'
+import { Context } from "./context/Context";
 
 function App() {
-  const userLoggedIn =false;
+  const {user} =useContext(Context);
+
   return (
     <Router>
       <div className="App">
@@ -24,16 +26,16 @@ function App() {
                 <Home/>
               </Route>
               <Route path='/register'>
-                {userLoggedIn?<Home/>:<Register/>}
+                {user?<Home/>:<Register/>}
               </Route>
               <Route path='/login'>
-                {userLoggedIn?<Home/>:<Login/>}
+                {user?<Home/>:<Login/>}
               </Route>
               <Route path='/write'>
-                {userLoggedIn?<Write/>:<Register/>}
+                {user?<Write/>:<Register/>}
               </Route>
               <Route path='/settings'>
-                {userLoggedIn?<Settings/>:<Register/>}
+                {user?<Settings/>:<Register/>}
               </Route>
               <Route path='/post/:postid'>
                 <Single/>

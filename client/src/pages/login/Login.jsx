@@ -10,7 +10,7 @@ function Login() {
 
     const userRef=useRef();
     const passwordRef=useRef();
-    const {user,dispatch}=useContext(Context)
+    const {user,dispatch,isFetching}=useContext(Context)
 
     const handleSubmit=async (e)=>{
         e.preventDefault();
@@ -42,7 +42,7 @@ function Login() {
                 <label><FaKey className='loginIcons'/> Password</label>
                 <input type='password' placeholder='*******' ref={passwordRef}></input>
                 <div className='btnsWrapper'>
-                    <button type='submit' className='loginButton'>Login</button>
+                    <button type='submit' className='loginButton' disabled={isFetching}>Login</button>
                     <span className='loginRegisterButton'><Link to='/register' style={{textDecoration: 'none',color:'inherit'}}>New User? Click Here!</Link></span>
                 </div>
             </form>

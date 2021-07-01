@@ -1,11 +1,12 @@
-import React from 'react'
+import React,{useContext} from 'react'
 import './navbar.css'
 import {ImPen,ImSearch} from 'react-icons/im'
 import {Link} from 'react-router-dom'
+import {Context} from '../../context/Context'
 
 function NavBar() {
 
-    const userLoggedIn=false;
+    const {user}=useContext(Context);
 
     return (
         <div className='navbar'>
@@ -33,13 +34,13 @@ function NavBar() {
                         <Link to='/write' style={{textDecoration: 'none',color:'inherit'}}>CREATE</Link>
                     </li>
                     <li className='navitem'>
-                        {userLoggedIn?'LOGOUT':<Link to='/register' style={{textDecoration: 'none',color:'inherit'}}>REGISTER</Link>}
+                        {user?'LOGOUT':<Link to='/register' style={{textDecoration: 'none',color:'inherit'}}>REGISTER</Link>}
                     </li>
                 </ul>
             </div>
 
             <div className='topright'>
-                {userLoggedIn?
+                {user?
                     (
                         <img 
                             className='userimg'

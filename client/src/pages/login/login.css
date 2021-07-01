@@ -64,6 +64,11 @@
     cursor: pointer;
 }
 
+.loginButton:disabled{
+    cursor:not-allowed;
+    background-color: #0054b4;
+}
+
 .loginForm>label{
     font-size:20px;
     margin-top: 20px;
