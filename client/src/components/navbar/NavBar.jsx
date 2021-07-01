@@ -3,6 +3,7 @@ import './navbar.css'
 import {ImPen,ImSearch} from 'react-icons/im'
 import {Link} from 'react-router-dom'
 import {Context} from '../../context/Context'
+import {toast,Toaster} from 'react-hot-toast'
 
 function NavBar() {
 
@@ -12,11 +13,14 @@ function NavBar() {
 
     const handleLogout=()=>{
         dispatch({type:"LOGOUT"})
+        toast('Logged Out!', {
+            icon: '⭕️',
+          });
     }
 
     return (
         <div className='navbar'>
-            
+            <Toaster/>
             <div className='topleft'>
                 <Link to='/' style={{textDecoration: 'none',color:'inherit'}}>
                     <ImPen size='1.3em'/>
