@@ -1,0 +1,14 @@
+.App{
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;
+    height: 100%
+}
+.appContainer{
+    flex: 1;
+    min-height: 100%;
+}
+
+.footer{
+    flex-shrink: 0;
+}
