@@ -38,6 +38,11 @@
     border-radius:15px;
     margin-top:10px;
     width:72.5vw;
+    resize: none;
+}
+
+.writeText:focus{
+    border:0070f3;
 }
 
 .writeSubmit{
