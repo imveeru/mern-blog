@@ -62,7 +62,7 @@ function NavBar() {
                             </Link>
                         ): null
                     }
-                <ImSearch className='searchicon' size='1.3em'/>
+                {/* <ImSearch className='searchicon' size='1.3em'/> */}
             </div>
         </div>
     )

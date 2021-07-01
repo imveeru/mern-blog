@@ -4,6 +4,7 @@ import {FaKey,FaUserAlt} from 'react-icons/fa'
 import {Link} from 'react-router-dom'
 import {Context} from '../../context/Context'
 import axios from 'axios'
+import {toast,Toaster} from 'react-hot-toast'
 
 
 function Login() {
@@ -23,6 +24,7 @@ function Login() {
             dispatch({type:'LOGIN_SUCCESS',payload:res.data})
         }catch(err){
             dispatch({type:'LOGIN_FAILURE'})
+            toast.err('Username/Password is incorrect!',{duration:3000})
         }   
     }
 
@@ -30,6 +32,7 @@ function Login() {
 
     return (
         <div className="login">
+            <Toaster/>
             <div className='loginHeader'>
                 <span className='headerTitle'>Write.</span>
                 <span className='headerSubtitle'>Share your notion.</span>
