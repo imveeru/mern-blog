@@ -66,7 +66,7 @@ function Settings() {
                     <div className='settingsPP'>
                         <img 
                             className=''
-                            src={user.profilePic}
+                            src={file?URL.createObjectURL(file):user.profilePic}
                             alt='userProfilePic'
                         />
                         <label htmlFor='fileInput'><BiImageAlt className='settingsPPIcon'/>.</label>
