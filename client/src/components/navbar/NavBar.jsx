@@ -8,6 +8,8 @@ function NavBar() {
 
     const {user,dispatch}=useContext(Context);
 
+    const PF='http://localhost:5000/images/'
+
     const handleLogout=()=>{
         dispatch({type:"LOGOUT"})
     }
@@ -54,7 +56,7 @@ function NavBar() {
                             <Link to='/settings' style={{textDecoration: 'none',color:'inherit'}}>
                                 <img 
                                     className='userimg'
-                                    src={user.profilePic}
+                                    src={PF+user.profilePic}
                                     alt='😎'
                                 />
                             </Link>

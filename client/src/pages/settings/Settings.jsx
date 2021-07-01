@@ -13,10 +13,14 @@ function Settings() {
     const[password,setPassword]=useState('')
     const[success,setSuccess]=useState(false)
     
-    const {user} = useContext(Context)
+    const {user,dispatch} = useContext(Context)
+
+    const PF='http://localhost:5000/images/'
 
     const handleSubmit=async (e) =>{
         e.preventDefault()
+
+        dispatch({type:'UPDATE_START'})
 
         const updatedUser={
             userId:user._id,
@@ -41,14 +45,16 @@ function Settings() {
         }
 
         try{
-            await axios.put('/users/'+user._id,updatedUser)
+            const res=await axios.put('/users/'+user._id,updatedUser)
             setSuccess(true)
+            dispatch({type:'UPDATE_SUCCESS',payload:res.data})
             // console.log(updatedUser);
             // console.log(user._id)
             success&&toast.success('Updated Successfully!',{duration:3000})
             // window.location.replace('/post/'+res.data._id)
         }catch(err){
             setSuccess(false)
+            dispatch({type:'UPDATE_FAILURE'})
             toast.error('An error occurred!',{duration:3000})
         }
     }
@@ -66,8 +72,8 @@ function Settings() {
                     <div className='settingsPP'>
                         <img 
                             className=''
-                            src={file?URL.createObjectURL(file):user.profilePic}
-                            alt='userProfilePic'
+                            src={file?URL.createObjectURL(file):PF+user.profilePic}
+                            alt='😎'
                         />
                         <label htmlFor='fileInput'><BiImageAlt className='settingsPPIcon'/>.</label>
                         <input type='file' id='fileInput' style={{display:'none'}} onChange={e=>{setFile(e.target.files[0])}}></input>
