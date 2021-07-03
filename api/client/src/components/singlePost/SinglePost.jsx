@@ -10,7 +10,7 @@ import {toast,Toaster} from 'react-hot-toast'
 
 function SinglePost() {
 
-    const PF="http://localhost:5000/images/" // images path
+    const PF="https://write-blog-veeru.herokuapp.com/images/" // images path
 
     const location=useLocation()
     const path=location.pathname.split('/')[2]
@@ -22,7 +22,7 @@ function SinglePost() {
 
     useEffect(() => {
         const fetchPost = async()=>{
-            const res= await axios.get(`/posts/${path}`)
+            const res= await axios.get(`/api/posts/${path}`)
             setPost(res.data)
             setTitle(res.data.title)
             setDesc(res.data.desc)
@@ -36,7 +36,7 @@ function SinglePost() {
 
     const handleDelete=async ()=>{
         try{
-            await axios.delete(`/posts/${path}`,{
+            await axios.delete(`/api/posts/${path}`,{
                 data:{username:user.username} // data cannot be passed directly
             })
             window.location.replace('/')
@@ -47,7 +47,7 @@ function SinglePost() {
 
     const handleUpdate=async ()=>{
         try{
-            await axios.put(`/posts/${path}`,{
+            await axios.put(`/api/posts/${path}`,{
                 username:user.username,title,desc // data can be passed directly
             })
             setUpdateMode(false)

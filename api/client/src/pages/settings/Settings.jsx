@@ -17,7 +17,7 @@ function Settings() {
 
     //console.log(user._id);
 
-    const PF='http://localhost:5000/images/'
+    const PF='https://write-blog-veeru.herokuapp.com/images/'
 
     const handleSubmit=async (e) =>{
         e.preventDefault()
@@ -39,7 +39,7 @@ function Settings() {
             updatedUser.profilePic=fileName;
 
             try{
-                await axios.post('/upload',data)
+                await axios.post('/api/upload',data)
             }
             catch(err){
 
@@ -47,7 +47,7 @@ function Settings() {
         }
 
         try{
-            const res=await axios.put('/users/'+user._id,updatedUser)
+            const res=await axios.put('/api/users/'+user._id,updatedUser)
             setSuccess(true)
             dispatch({type:'UPDATE_SUCCESS',payload:res.data})
             // console.log(updatedUser);
@@ -63,7 +63,7 @@ function Settings() {
 
     const handleDelete=async ()=>{
         try{
-            await axios.delete(`/users/${user._id}`,{
+            await axios.delete(`/api/users/${user._id}`,{
                 data:{
                     userId:user._id,
                     username:username,

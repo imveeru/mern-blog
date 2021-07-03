@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom'
 
 function Post({post}) {
 
-    const PF="http://localhost:5000/images/" // images path
+    const PF="https://write-blog-veeru.herokuapp.com/images/" // images path
 
     return (
         <div className="post">
