@@ -64,7 +64,9 @@ function NavBar() {
                                     alt='😎Profile'
                                 />
                             </Link>
-                        ): null
+                        ): (<div className='navitem'> 
+                        <Link to='/login' style={{textDecoration: 'none',color:'inherit'}}>LOGIN</Link>
+                        </div>)
                     }
                 {/* <ImSearch className='searchicon' size='1.3em'/> */}
             </div>
