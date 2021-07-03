@@ -9,5 +9,3 @@ The app is built with Nodejs and Express for backend, Reactjs for frontend and M
 ## Working Link
 
 [Write. -  Share your notion.](https://write-blog-veeru.herokuapp.com/)
-
-![App Preview]('https://i.imgur.com/GvkARir.jpeg')
