@@ -1,6 +1,6 @@
 import React,{useContext} from 'react'
 import './navbar.css'
-import {ImPen,ImSearch} from 'react-icons/im'
+import {ImPen} from 'react-icons/im'
 import {Link} from 'react-router-dom'
 import {Context} from '../../context/Context'
 import {toast,Toaster} from 'react-hot-toast'
@@ -34,12 +34,12 @@ function NavBar() {
                     <li className='navitem'>
                         <Link to='/' style={{textDecoration: 'none',color:'inherit'}}>HOME</Link>
                     </li>
-                    <li className='navitem'>
+                    {/* <li className='navitem'>
                         <Link to='/' style={{textDecoration: 'none',color:'inherit'}}>ABOUT</Link>
                     </li>
                     <li className='navitem'>
                         <Link to='/' style={{textDecoration: 'none',color:'inherit'}}>CONTACT</Link>
-                    </li>
+                    </li> */}
                     <li className='navitem'>
                         <Link to='/write' style={{textDecoration: 'none',color:'inherit'}}>CREATE</Link>
                     </li>

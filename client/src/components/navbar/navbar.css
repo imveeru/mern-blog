@@ -60,3 +60,9 @@
     cursor: pointer;
     margin-left: 15px;
 }
+
+@media screen and (max-width:1000px){
+    .blogtitle{
+        display:none
+    }
+}

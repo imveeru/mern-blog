@@ -63,6 +63,12 @@
     font-weight: 800px;
 }
 
+@media screen and (max-width:1000px){
+    .singlePostImg{
+        height:250px;
+    }
+}
+
 /* update mode styles */
 
 .singlePostTitleInput{

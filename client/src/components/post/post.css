@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
 
 .post{
-    width:375px;
+    width: 23.43em;;
     margin: 0 25px 40px 25px;
 }
 
@@ -60,4 +60,13 @@ hr{
     display:-webkit-box;
     -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;
+}
+
+@media screen and (max-width:1000px){
+    .postImg{
+        width: 325px;
+    }
+    .postDesc{
+        width: 325px;
+    }
 }
