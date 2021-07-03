@@ -106,3 +106,15 @@
     opacity: .7;
     padding-top:10px;
 }
+
+@media screen and (max-width:1000px){
+    .btnsWrapper{
+        flex-direction: column;
+    }
+    .registerFormWrapper{
+        width:70vw;
+    }
+    .registerForm{
+        width:65vw;
+    }
+}
