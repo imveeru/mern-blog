@@ -24,7 +24,7 @@ function Login() {
             dispatch({type:'LOGIN_SUCCESS',payload:res.data})
         }catch(err){
             dispatch({type:'LOGIN_FAILURE'})
-            toast.err('Username/Password is incorrect!',{duration:3000})
+            toast.error('Username/Password is incorrect!',{duration:3000})
         }   
     }
 

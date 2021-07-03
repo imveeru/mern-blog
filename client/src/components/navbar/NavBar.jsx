@@ -61,7 +61,7 @@ function NavBar() {
                                 <img 
                                     className='userimg'
                                     src={PF+user.profilePic}
-                                    alt='😎'
+                                    alt='😎Profile'
                                 />
                             </Link>
                         ): null

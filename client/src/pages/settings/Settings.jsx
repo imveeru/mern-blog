@@ -15,6 +15,8 @@ function Settings() {
     const[password,setPassword]=useState('')
     const[success,setSuccess]=useState(false)
 
+    //console.log(user._id);
+
     const PF='http://localhost:5000/images/'
 
     const handleSubmit=async (e) =>{
@@ -59,13 +61,30 @@ function Settings() {
         }
     }
 
+    const handleDelete=async ()=>{
+        try{
+            await axios.delete(`/users/${user._id}`,{
+                data:{
+                    userId:user._id,
+                    username:username,
+                    password:password
+                } // data cannot be passed directly
+            })
+            //window.location.replace('/')
+            toast('User has been deleted!',{icon:'🥀'})
+            dispatch({type:"LOGOUT"})
+        }catch(err){
+            toast.error('An error occurred!')
+        }
+    }
+
     return (
         <div className="settings">
             <div className='settingsWrapper'>
             <Toaster/>
                 <div className='settingsTitle'>
                     <span className='settingsUpdateTitle'>Update Your Profile</span>
-                    <span className='settingsDeleteTitle'>Delete Your Profile</span>
+                    <span className='settingsDeleteTitle' onClick={handleDelete}>Delete Your Profile</span>
                 </div>
                 <form className='settingsForm' onSubmit={handleSubmit}>
                     <label>Profile Picture</label>
