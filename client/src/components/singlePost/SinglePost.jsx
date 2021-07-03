@@ -6,6 +6,7 @@ import {RiDeleteBin6Line} from 'react-icons/ri'
 import axios from 'axios'
 import {Link} from 'react-router-dom'
 import {Context} from '../../context/Context'
+import {toast,Toaster} from 'react-hot-toast'
 
 function SinglePost() {
 
@@ -39,7 +40,9 @@ function SinglePost() {
                 data:{username:user.username} // data cannot be passed directly
             })
             window.location.replace('/')
-        }catch(err){}
+        }catch(err){
+            toast.error('An error occurred!')
+        }
     }
 
     const handleUpdate=async ()=>{
@@ -48,13 +51,17 @@ function SinglePost() {
                 username:user.username,title,desc // data can be passed directly
             })
             setUpdateMode(false)
+            toast.success('Post updated successfully!')
             // window.location.reload('/')
-        }catch(err){}
+        }catch(err){
+            toast.error('An error occurred!')
+        }
     }
 
     return (
         <div className="singlePost">
             <div className='singlePostWrapper'>
+            <Toaster/>
                 {post.photo && (
                     <img
                     className='singlePostImg'
@@ -78,7 +85,7 @@ function SinglePost() {
                     <span className='singlePostDate'>{new Date(post.createdAt).toDateString()}</span>
                 </div>
 
-                {updateMode?<textarea value={desc} className='singlePostDescInput' onChange={e=>setDesc(e.target.value)}></textarea>:
+                {updateMode?<textarea rows='30' cols='90' value={desc} className='singlePostDescInput' onChange={e=>setDesc(e.target.value)}></textarea>:
                     (<p className='singlePostDesc'>
                         {desc}
                     </p>)
