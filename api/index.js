@@ -9,12 +9,14 @@ const categoryRoute=require('./routes/categories')
 const multer=require('multer')
 const path=require('path')
 
+const PORT = process.env.PORT || 5000;
+
 dotenv.config(); // to access mongo url
 app.use(express.json())
 
 app.use('/images',express.static(path.join(__dirname,'images')))
 
-mongoose.connect(process.env.MONGO_URL, {
+mongoose.connect(process.env.MONGODB_URI || process.env.MONGO_URL, {
         useNewUrlParser: true,
         useUnifiedTopology: true,
         useCreateIndex:true,
@@ -47,6 +49,16 @@ app.use('/api/posts',postRoute)
 
 app.use('/api/categories',categoryRoute)
 
-app.listen('5000',()=>{
-    console.log('Backend is running')
+//for heroku
+if(process.env.NODE_ENV=='production'){
+    app.use(express.static('../client/build'));
+
+    app.get('*',(req,res)=>{
+        res.sendFile(path.join(__dirname,'client','build','index.html'));//relative path
+    })
+}
+
+//console.log(path.join(__dirname));
+app.listen(PORT,()=>{
+    console.log('Backend is running in',PORT)
 });
