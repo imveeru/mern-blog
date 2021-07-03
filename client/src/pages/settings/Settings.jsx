@@ -52,7 +52,7 @@ function Settings() {
             dispatch({type:'UPDATE_SUCCESS',payload:res.data})
             // console.log(updatedUser);
             // console.log(user._id)
-            success&&toast.success('Updated Successfully!',{duration:3000})
+            toast.success('Updated Successfully!',{duration:3000})
             // window.location.replace('/post/'+res.data._id)
         }catch(err){
             setSuccess(false)
@@ -101,8 +101,8 @@ function Settings() {
                     <input type='text' value={username} placeholder={user.username} onChange={e=>setUsername(e.target.value)} />
                     <label>eMail</label>
                     <input type='email' value={email} placeholder={user.email} onChange={e=>setEmail(e.target.value)} />
-                    <label>Password</label>
-                    <input type='password' placeholder='**********' onChange={e=>setPassword(e.target.value)} />
+                    <label>Password<small>*</small></label>
+                    <input type='password' placeholder='**********' onChange={e=>setPassword(e.target.value)} required />
                     <button className='settingsSubmit' type='submit'>Update</button>
                 </form>
             </div>
