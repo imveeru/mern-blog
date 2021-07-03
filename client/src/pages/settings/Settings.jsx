@@ -78,12 +78,12 @@ function Settings() {
                         <label htmlFor='fileInput'><BiImageAlt className='settingsPPIcon'/>.</label>
                         <input type='file' id='fileInput' style={{display:'none'}} onChange={e=>{setFile(e.target.files[0])}}></input>
                     </div>
-                    <label>Username</label>
-                    <input type='text' placeholder={user.username} onChange={e=>setUsername(e.target.value)}/>
-                    <label>eMail</label>
-                    <input type='email' placeholder={user.email} onChange={e=>setEmail(e.target.value)}/>
-                    <label>Password</label>
-                    <input type='password' placeholder='**********' onChange={e=>setPassword(e.target.value)}/>
+                    <label>Username*</label>
+                    <input type='text' placeholder={user.username} onChange={e=>setUsername(e.target.value)} required/>
+                    <label>eMail*</label>
+                    <input type='email' placeholder={user.email} onChange={e=>setEmail(e.target.value)} required/>
+                    <label>Password*</label>
+                    <input type='password' placeholder='**********' onChange={e=>setPassword(e.target.value)} required/>
                     <button className='settingsSubmit' type='submit'>Update</button>
                 </form>
             </div>
